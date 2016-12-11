@@ -1,0 +1,8 @@
+import library.Book
+
+model {
+	Iterable<Book> bookList
+}
+
+json tmpl.book(bookList ?: [])
+

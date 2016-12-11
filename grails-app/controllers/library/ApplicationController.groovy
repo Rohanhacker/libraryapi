@@ -1,5 +1,6 @@
 package library
 
+import grails.converters.JSON
 import grails.core.GrailsApplication
 import grails.util.Environment
 import grails.plugins.*
