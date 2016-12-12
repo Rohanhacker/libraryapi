@@ -7,6 +7,12 @@ import grails.rest.*
 class Book {
     String title
     int edition
+    String isbn
     Publisher publisher
-    Author author
+//    String url
+    static hasMany = [author: Author]
+    static constraints = {
+        title blank: false, unique: true
+        isbn blank: false, unique: true
+    }
 }
