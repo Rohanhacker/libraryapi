@@ -2,6 +2,7 @@ package library
 
 import grails.rest.RestfulController
 import grails.transaction.Transactional
+import org.hibernate.annotations.FetchMode
 
 class BookController extends RestfulController {
 	static responseFormats = ['json', 'xml']
@@ -33,7 +34,7 @@ class BookController extends RestfulController {
     }
 
     def searchByName() {
-        def results = Book.findAllByTitleLike("%"+params.key+"%")
+        def results = Book.findAllByTitleLike("%"+params.key+"%", [max: 10, sort: "title"])
         respond results
     }
 }
