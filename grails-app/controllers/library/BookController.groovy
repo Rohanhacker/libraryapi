@@ -11,7 +11,7 @@ class BookController extends RestfulController {
     }
     @Transactional(readOnly = true)
     def index() {
-        respond Book.list()
+        respond Book.list([fetch: [author: "join"]])
     }
     @Transactional
     def save(Book book) {
