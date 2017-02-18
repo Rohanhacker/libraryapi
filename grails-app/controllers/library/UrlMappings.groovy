@@ -3,14 +3,12 @@ package library
 class UrlMappings {
 
     static mappings = {
-        delete "/$controller/$id(.$format)?"(action:"delete")
-        get "/$controller(.$format)?"(action:"index")
-        get "/$controller/$id(.$format)?"(action:"show")
-        post "/$controller(.$format)?"(action:"save")
-        put "/$controller/$id(.$format)?"(action:"update")
-        patch "/$controller/$id(.$format)?"(action:"patch")
-
-        "/book/search"(controller: 'book', action: 'searchByName')
+        put "/api/$controller/$id(.$format)?"(action:"update")
+        get "/api/book"(controller: 'book', action:'index')
+        post "/api/create"(controller: 'book', action:'save')
+        post "/api/delete"(controller: 'book', action:'delete') // todo try to make delete work
+        get "/book/search"(controller: 'book', action: 'searchByName')
+        get "/api/pages"(controller: 'book', action:'pages')
         "/"(controller: 'application', action:'index')
         "500"(view: '/error')
         "404"(view: '/notFound')

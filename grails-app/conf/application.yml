@@ -1,5 +1,7 @@
 ---
 grails:
+    cors:
+        enabled: true
     profile: rest-api
     codegen:
         defaultPackage: library
@@ -73,8 +75,8 @@ dataSource:
     jmxExport: true
     driverClassName: com.mysql.jdbc.Driver
     dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-    username: rohan
-    password: rohan
+    username: root
+    password: maxpayne
 
 environments:
     development:

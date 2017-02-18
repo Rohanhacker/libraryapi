@@ -8,6 +8,8 @@ import java.nio.charset.Charset
 conversionRule 'clr', ColorConverter
 conversionRule 'wex', WhitespaceThrowableProxyConverter
 
+
+
 // See http://logback.qos.ch/manual/groovy.html for details on configuration
 appender('STDOUT', ConsoleAppender) {
     encoder(PatternLayoutEncoder) {
@@ -37,3 +39,7 @@ if (Environment.isDevelopmentMode() && targetDir != null) {
 else {
     root(ERROR, ['STDOUT'])
 }
+
+logger("org.springframework.security", DEBUG, ['STDOUT'], false)
+logger("grails.plugin.springsecurity", DEBUG, ['STDOUT'], false)
+logger("org.pac4j", DEBUG, ['STDOUT'], false)

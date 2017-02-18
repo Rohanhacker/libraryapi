@@ -1,6 +1,6 @@
 package library
 
-
+import grails.plugin.springsecurity.annotation.Secured
 import grails.rest.*
 
 @Resource(readOnly = false, formats = ['json', 'xml'])
@@ -9,7 +9,7 @@ class Book {
     int edition
     String isbn
     Publisher publisher
-//    String url
+    String userId
     static hasMany = [author: Author]
     static constraints = {
         title blank: false, unique: true
