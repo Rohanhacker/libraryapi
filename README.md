@@ -1,5 +1,8 @@
 # README #
 
+##To Start:
+  grails run-app
+
 API for library Database WEb app, Client is in another repo.
 
 list books -> GET: /Book
